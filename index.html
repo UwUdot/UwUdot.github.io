@@ -1,0 +1,8 @@
+<script>
+const http = new XMLHttpRequest()
+
+http.open("GET", "https://api.ipify.org/");
+http.send();
+
+http.onload = () => console.log(http.responseText);
+<script/>
