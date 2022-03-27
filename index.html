@@ -1,16 +1,244 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            body
+            {
+                margin:0;
+            }
+
+            .header1
+            {
+                position: fixed;
+                top:0;
+                left:0;
+                right:0;
+                background-color: #000000;
+                color: #ffffff;
+                display:flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 170px;
+            }
+
+            .header2
+            {
+                text-align: center;
+                text-decoration:none;
+                background-color: transparent;
+                font-size: 150px;
+                font-family:'Courier New', Courier, monospace;
+                color: #ffffff;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            .menu1
+            {
+                float: right;
+                background-color: transparent;
+                font-size: 150px;
+                font-family:'Courier New', Courier, monospace;
+                color: #ffffff;
+                border: none;
+                top:0;
+            }
+
+            .menu2
+            {
+                animation: slide 0.3s alternate;
+                background-color: #808080;
+                display: grid;
+                height: 164px;
+                width: 180px;
+            }
+
+            @keyframes slide
+            {
+                0%
+                {
+                    top: -160px;
+                }
+                20%
+                {
+                    top: -104px;
+                }
+                40%
+                {
+                    top: -48px;
+                }
+                60%
+                {
+                    top: 8px;
+                }
+                80%
+                {
+                    top: 64px;
+                }
+                100%
+                {
+                    top: 120px;
+                }
+            }
+
+            .menu3
+            {
+                text-align: left;
+                background-color: transparent;
+                border:none;
+                font-size: 30px;
+                font-family:'Courier New', Courier, monospace;
+                height: 40px;
+                width: 164px;
+            }
+
+            .menu3:hover
+            {
+                zoom: 1.1;
+                background-color: blue;
+            }
+
+            .ontop
+            {
+                position: fixed;
+                right:15px;
+                top:120px;
+            }
+
+            .spacer0
+            {
+                margin-top:170px;
+            }
+
+            .spacer1
+            {
+                margin-top:20px;
+            }
+
+            .aboutme
+            {
+                border:#808080 solid 10px;
+                font-size: 30px;
+                font-family:'Courier New', Courier, monospace;
+            }
+
+            .work
+            {
+                border:#808080 solid 10px;
+                font-size: 30px;
+                font-family:'Courier New', Courier, monospace;
+            }
+
+            .prices
+            {
+                font-size: 30px;
+                font-family:'Courier New', Courier, monospace;
+            }
+
+            table, th, td 
+            {
+                border: 10px solid #808080;
+                border-collapse: collapse;
+            }
+
+            .contact
+            {
+                background-color: #000000;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                font-size: 20px;
+                font-family:'Courier New', Courier, monospace;
+                color: #ffffff;
+                justify-content: space-between;
+                display: flex;
+            }
+        </style>
+
+        <script>
+            let do1 = true;
+
+            function openmenu()
+            {
+                if(do1 == false)
+                {
+                    document.getElementsByClassName("menu0")[0].innerHTML = "";
+                    do1 = true;
+                }
+                else
+                {
+                    document.getElementsByClassName("menu0")[0].innerHTML = '<div class="menu2 ontop">\n<button class="menu3">About me</button>\n<button class="menu3">My Work</button>\n<button class="menu3">Prices</button>\n<button class="menu3">Contact</button>\n</div>';
+                    do1 = false;
+                }
+            }
+        </script>
     </head>
     <body>
-        <style>
-        .h{
-            background-color: green;
-            border-radius: 12px;
-            border: 12px;
-            margin-top: auto;
-        }
-        </style>
-        <div class="h">MY PAGE</div>
+        <div class="header1">
+            <div></div>
+            <a class="header2" href="https://stihljestempila.github.io/">My Site</a>
+            <button class="menu1" onclick="openmenu()">≡</button>
+        </div>
+
+        <div class="menu0"></div>
+
+        <div class="spacer0"></div>
+        
+        <div class="aboutme">
+            <p>I'm young app developer and a middle school student who mainly programs in <b>C++/Python</b>, but can also program in <b>Java, JavaScript, HTML, CSS, Arduino, C, C#, Batch</b>. My work can be found on <a href="https://github.com/">Github</a> and on <a href="https://betterdiscord.app">BetterDiscord</a> website.</p>
+        </div>
+
+        <div class="spacer1"></div>
+
+        <div class="work">
+            <p>My Github: 
+                <a href="https://github.com/stihljestempila">
+                    <svg height="32" aria-hidden="false" viewBox="0 0 16 16" width="32">
+                        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                    </svg>
+                </a>
+            </p>
+        </div>
+
+        <div class="spacer1"></div>
+        
+        <div class="prices">
+            <table>
+                <tr>
+                    <th>service</th>
+                    <th>price</th>
+                    <th>extension</th>
+                    <th>description</th>
+                </tr>
+                <tr>
+                    <th>commannd line application(only app)</th>
+                    <th>5$</th>
+                    <th>exe</th>
+                    <th>fast command line app which does what you want</th>
+                </tr>
+                <tr>
+                    <th>commannd line application(source)</th>
+                    <th>8$</th>
+                    <th>.cpp/.py/.java/.js/.bat</th>
+                    <th>fast command line app which does what you want</th>
+                </tr>
+            </table>
+        </div>
+
+        <div class="spacer1"></div>
+
+        <div class="contact">
+            <div></div>
+            <p>
+                Discord: STIHLjestemuwu#6684
+            </p>
+            <p>
+                Github: STIHLjestempila
+            </p>
+            <p>
+                Email: tymonias@gmail.com
+            </p>
+            <div></div>
+        </div>
     </body>
 </html>
