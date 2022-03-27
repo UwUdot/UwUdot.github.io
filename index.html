@@ -167,9 +167,29 @@
                 }
                 else
                 {
-                    document.getElementsByClassName("menu0")[0].innerHTML = '<div class="menu2 ontop">\n<button class="menu3">About me</button>\n<button class="menu3">My Work</button>\n<button class="menu3">Prices</button>\n<button class="menu3">Contact</button>\n</div>';
+                    document.getElementsByClassName("menu0")[0].innerHTML = '<div class="menu2 ontop">\n<button class="menu3" onclick="toaboutme">About me</button>\n<button class="menu3" onclick="towork">My Work</button>\n<button class="menu3" onclick="toprices">Prices</button>\n<button class="menu3" onclick="tocontact">Contact</button>\n</div>';
                     do1 = false;
                 }
+            }
+
+            function toaboutme()
+            {
+                document.getElementsByClassName("aboutme")[0].scrollIntoView();
+            }
+
+            function towork()
+            {
+                document.getElementsByClassName("work")[0].scrollIntoView();
+            }
+
+            function toprices()
+            {
+                document.getElementsByClassName("prices")[0].scrollIntoView();
+            }
+
+            function tocontact()
+            {
+                document.getElementsByClassName("contact")[0].scrollIntoView();
             }
         </script>
     </head>
